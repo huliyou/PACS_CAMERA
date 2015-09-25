@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MagicalRecord.h"
+#import "TemporaryUser.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Model"];
+    // 添加临时用户
+    [TemporaryUser initTemporaryUserWithUsername:@"111111" andPassword:@"111111"];
+    
     return YES;
 }
 

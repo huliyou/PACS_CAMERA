@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface ViewController : UIViewController
-
-
+@property (strong, nonatomic) User *user;
+@property (strong, nonatomic) NSNumber *index;
 @end
 
