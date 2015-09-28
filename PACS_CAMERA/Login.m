@@ -13,27 +13,39 @@
 
 @implementation Login
 + (User *)loginWithUsername:(NSString *)username andPassWord:(NSString *) password {
-    User *user = nil;
+    __block User *user = nil;
+    
     //Temorary User
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(username == %@) AND (password == %@)",username,password];
     User *temporaryUser = [User MR_findFirstWithPredicate:predicate];
-    NSLog(@"%@",temporaryUser.username);
     if (temporaryUser) {
         return temporaryUser;
     }
     
     //WebService User
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSArray * param = @[@{@"username":username},@{@"password":password}];
+    NSDictionary *param  = @{@"username":username, @"password":password};
     [manager POST:LoginURL parameters:param success:^(AFHTTPRequestOperation *operation, id responseData){
-        // TODO: complete user
-        NSError *jsonError;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData
-                                                             options:NSJSONReadingMutableContainers
-                                                               error:&jsonError];
-        // user
+        if (operation.response.statusCode == 200) { // 登陆成功
+            NSError *jsonError;
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                 options:NSJSONReadingMutableContainers
+                                                                   error:&jsonError];
+            
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"username == %@",username];
+            user = [User MR_findFirstWithPredicate:predicate];
+            if (user) { //曾经登陆过
+                return;
+            } else { //第一次登陆
+                user = [User MR_createEntity];
+                user.userid = json[@"userid"];
+                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
+            }
+        } else if (operation.response.statusCode == 403){ //登陆失败
+            user = nil;
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-        
+        user = nil;
     }];
     
     return user;

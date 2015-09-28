@@ -2,8 +2,8 @@
 //  User.h
 //  PACS_CAMERA
 //
-//  Created by Leiyou Who on 15/9/17.
-//  Copyright (c) 2015年 Leiyou Who. All rights reserved.
+//  Created by Leiyou Who on 15/9/28.
+//  Copyright © 2015年 Leiyou Who. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,18 +11,14 @@
 
 @class Pictures;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface User : NSManagedObject
 
-@property (nonatomic, retain) NSString * username;
-@property (nonatomic, retain) NSString * password;
-@property (nonatomic, retain) NSSet *picturesList;
-@end
-
-@interface User (CoreDataGeneratedAccessors)
-
-- (void)addPicturesListObject:(Pictures *)value;
-- (void)removePicturesListObject:(Pictures *)value;
-- (void)addPicturesList:(NSSet *)values;
-- (void)removePicturesList:(NSSet *)values;
+// Insert code here to declare functionality of your managed object subclass
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "User+CoreDataProperties.h"

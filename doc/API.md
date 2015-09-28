@@ -88,4 +88,4 @@
 
 |Method|Status|
 |-|-|
-|pst|502|
+|post|502|

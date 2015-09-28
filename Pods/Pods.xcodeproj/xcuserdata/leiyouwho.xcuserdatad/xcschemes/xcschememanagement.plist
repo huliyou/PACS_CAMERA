@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-AFNetworking.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MagicalRecord.xcscheme</key>
+		<key>MagicalRecord.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>624F1FE7B050A7CEA3D677E3</key>
+		<key>1CAF6EA26F1516A2C406CCC305F7ECA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>649979CDDCF0EC57F7D11A42</key>
+		<key>CB64E4C1A697983CE17D1B2DA2D66AEB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F90AF8BEAC58C66F08576A00</key>
+		<key>CCE8C80633F8D13BAED0127541070767</key>
 		<dict>
 			<key>primary</key>
 			<true/>

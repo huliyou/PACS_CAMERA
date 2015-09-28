@@ -55,7 +55,6 @@
 @end
 
 #pragma mark - Deprecated Methods — DO NOT USE
-
 @implementation MagicalRecord (ActionsDeprecated)
 
 + (void) saveUsingCurrentThreadContextWithBlock:(void (^)(NSManagedObjectContext *localContext))block completion:(MRSaveCompletionHandler)completion;
@@ -125,6 +124,7 @@
         if (block) {
             block(localContext);
         }
+
         [localContext MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
             if (contextDidSave) {
                 if (completion) {
