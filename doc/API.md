@@ -43,7 +43,7 @@
 |---|---------|
 |get|502|
 
-## Upload
+## Upload file  {"message":"file"}
 
 ### request
 > 单组图片上传
@@ -76,7 +76,7 @@
 |POST|groupid|groupContent|[{"groupid":"$1","groupContent":"{"userid":"xxx","patientid":"xxx","conditionid":"xxx","date","1990-4-22-10-13"}"}]
 ```
 图片文件 文件名规则 $1_$2.png  $1组 $2单元
-```
+``  `
 ### response
 > 上传成功
 

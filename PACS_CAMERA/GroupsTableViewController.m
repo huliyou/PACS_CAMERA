@@ -8,6 +8,7 @@
 
 #import "GroupsTableViewController.h"
 #import "ConditionViewController.h"
+#import "ViewController.h"
 #import "MagicalRecord.h"
 #import "Pictures.h"
 
@@ -81,6 +82,7 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     return [self.user.picturesList count];
@@ -91,18 +93,27 @@
     
     // Configure the cell...
     
-    cell.textLabel.text = ((Pictures *)[self.user.picturesList allObjects][indexPath.row]).date;
+    NSSortDescriptor *dateSort = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+    NSDate *date = ([self.user.picturesList sortedArrayUsingDescriptors: @[dateSort]][indexPath.row]).date;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+//    cell.textLabel.text = [formatter stringFromDate:date];
+    UILabel *dateLabel = (UILabel *)[cell viewWithTag:3];
+    dateLabel.text = [formatter stringFromDate:date];
+    
+    UILabel *patientidLabel = (UILabel *)[cell viewWithTag:1];
+    patientidLabel.text = ([self.user.picturesList sortedArrayUsingDescriptors: @[dateSort]][indexPath.row]).patientid;
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+#pragma mark - table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSSortDescriptor *dateSort = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+    Pictures *pictures = [self.user.picturesList sortedArrayUsingDescriptors: @[dateSort]][indexPath.row];
+    [self performSegueWithIdentifier:@"SelectRow" sender:pictures];
 }
-*/
+
 
 #pragma mark - table view edit
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -141,6 +152,7 @@
 
 
 
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -150,6 +162,10 @@
     if ([segue.identifier isEqualToString:@"Add"]) {
         ConditionViewController *vc = segue.destinationViewController;
         vc.user = self.user;
+    }
+    if ([segue.identifier isEqualToString:@"SelectRow"]) {
+        ViewController *vc = segue.destinationViewController;
+        vc.pictures = (Pictures *)sender;
     }
 }
 

@@ -42,9 +42,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *arr = [[self.user.picturesList allObjects] mutableCopy];
-    Pictures *pictures = [arr lastObject];
-    self.navigationItem.title = pictures.date;
+    /**
+     *  set navigationItem title
+     */
+    self.navigationItem.title = self.pictures.patientid;
     
     /**
      * 设置返回按钮，返回至GroupsTableViewController
@@ -59,7 +60,9 @@
         self.imagePickerController = [[UIImagePickerController alloc] init];
     });
     
-    // add new group
+    NSSortDescriptor * sortByTag = [[NSSortDescriptor alloc] initWithKey:@"tag" ascending:YES];
+    self.imageList = [[self.pictures.imageDataList sortedArrayUsingDescriptors:@[sortByTag]] mutableCopy];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -78,7 +81,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowSinglePictureViewController"]) {
         ShowSinglePictureViewController *vc = segue.destinationViewController;
-        vc.image = sender[@"image"];
+        vc.imageData = sender[@"imageData"];
         vc.index = sender[@"index"];
     }
 }
@@ -117,18 +120,15 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-//    UIImageView *imageView = [[UIImageView alloc] init];
-//    imageView.image = self.imageList[indexPath.row];
-//    imageView.frame = CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height);
-//    [cell addSubview:imageView];
+    
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    imageView.image = self.imageList[indexPath.row];
+    imageView.image = [UIImage imageWithData: ((Picture *)self.imageList[indexPath.row]).imageData];
     return cell;
 }
 
 #pragma mark - UICollectionView Delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *param = @{@"image":self.imageList[indexPath.row],@"index":@(indexPath.row)};
+    NSDictionary *param = @{@"imageData":((Picture *)self.imageList[indexPath.row]).imageData,@"index":@(indexPath.row)};
     [self performSegueWithIdentifier:@"ShowSinglePictureViewController" sender:param];
 }
 
@@ -145,14 +145,18 @@
     {
         originalImage = [info objectForKey:UIImagePickerControllerCropRect];
     }
-    [self.imageList addObject:originalImage];
+    
+    // 将图片添加到 self.imageList
+    Picture *picture = [Picture MR_createEntity];
+    picture.pictures = self.pictures;
+    picture.tag = [NSNumber numberWithInteger:[self.imageList count] - 1];
+    picture.imageData = UIImageJPEGRepresentation(originalImage, 1);
+    [self.imageList addObject:picture];
     [self.imageCollection reloadData];
     
-    //保存 图片
-    
-//    [self.imagePickerController.view removeFromSuperview];
-    
-    
+    // 将图片添加到 self.pictures
+    [self.pictures addImageDataListObject:picture];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
 }
 
 @end

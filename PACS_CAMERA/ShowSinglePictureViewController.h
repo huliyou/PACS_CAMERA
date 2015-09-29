@@ -10,5 +10,5 @@
 
 @interface ShowSinglePictureViewController : UIViewController
 @property (strong, nonatomic)   NSNumber *index;
-@property (strong, nonatomic)   UIImage *image;
+@property (strong, nonatomic)   NSData *imageData;
 @end

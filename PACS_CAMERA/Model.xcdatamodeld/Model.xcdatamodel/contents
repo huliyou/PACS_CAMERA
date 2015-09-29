@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14E46" minimumToolsVersion="Xcode 4.3">
+    <entity name="Condition" representedClassName="Condition" syncable="YES">
+        <attribute name="conditionid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="conditionName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Picture" representedClassName="Picture" syncable="YES">
         <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="pictures" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pictures" inverseName="imageDataList" inverseEntity="Pictures" syncable="YES"/>
     </entity>
     <entity name="Pictures" representedClassName="Pictures" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="patient" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="conditionid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="patientid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="imageDataList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" inverseName="pictures" inverseEntity="Picture" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="picturesList" inverseEntity="User" syncable="YES"/>
     </entity>
@@ -17,8 +23,9 @@
         <relationship name="picturesList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pictures" inverseName="user" inverseEntity="Pictures" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Picture" positionX="583" positionY="527" width="128" height="73"/>
-        <element name="Pictures" positionX="358" positionY="522" width="128" height="103"/>
-        <element name="User" positionX="81" positionY="542" width="128" height="30"/>
+        <element name="Picture" positionX="583" positionY="527" width="128" height="30"/>
+        <element name="Pictures" positionX="358" positionY="522" width="128" height="120"/>
+        <element name="User" positionX="81" positionY="542" width="128" height="105"/>
+        <element name="Condition" positionX="288" positionY="567" width="128" height="75"/>
     </elements>
 </model>

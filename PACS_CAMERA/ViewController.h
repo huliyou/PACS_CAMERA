@@ -11,6 +11,7 @@
 
 @interface ViewController : UIViewController
 @property (strong, nonatomic) User *user;
+@property (strong, nonatomic) Pictures *pictures;
 @property (strong, nonatomic) NSNumber *index;
 @end
 

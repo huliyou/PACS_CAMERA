@@ -38,6 +38,7 @@
                 return;
             } else { //第一次登陆
                 user = [User MR_createEntity];
+                user.username = username;
                 user.userid = json[@"userid"];
                 [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
             }

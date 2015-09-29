@@ -10,6 +10,13 @@
 		3497B6F9C5CB5DA3FD7BC972 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 484A6DBB063842755DA2BE72 /* libPods.a */; };
 		DC3424CB1BB91391005C28D0 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424C81BB91391005C28D0 /* User+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		DC3424CC1BB91391005C28D0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424CA1BB91391005C28D0 /* User.m */; settings = {ASSET_TAGS = (); }; };
+		DC3424E31BB92116005C28D0 /* ConditionInit.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424E21BB92116005C28D0 /* ConditionInit.m */; settings = {ASSET_TAGS = (); }; };
+		DC3424E81BB92155005C28D0 /* Condition+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424E51BB92155005C28D0 /* Condition+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		DC3424E91BB92155005C28D0 /* Condition.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424E71BB92155005C28D0 /* Condition.m */; settings = {ASSET_TAGS = (); }; };
+		DC3424EE1BB932B0005C28D0 /* Pictures+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424EB1BB932B0005C28D0 /* Pictures+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		DC3424EF1BB932B0005C28D0 /* Pictures.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424ED1BB932B0005C28D0 /* Pictures.m */; settings = {ASSET_TAGS = (); }; };
+		DC3424F41BBA2BF4005C28D0 /* Picture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424F11BBA2BF4005C28D0 /* Picture+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		DC3424F51BBA2BF4005C28D0 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424F31BBA2BF4005C28D0 /* Picture.m */; settings = {ASSET_TAGS = (); }; };
 		DCD4FC401BAA9BC200BD0831 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD4FC3F1BAA9BC200BD0831 /* Login.m */; };
 		DCD4FC431BAA9CBA00BD0831 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD4FC421BAA9CBA00BD0831 /* LoginViewController.m */; };
 		DCD4FC491BAAA0D500BD0831 /* TemporaryUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD4FC481BAAA0D500BD0831 /* TemporaryUser.m */; };
@@ -23,8 +30,6 @@
 		DCD5FF0E1BA2AA4A00341183 /* PACS_CAMERATests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5FF0D1BA2AA4A00341183 /* PACS_CAMERATests.m */; };
 		DCD5FF1B1BA659E100341183 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCD5FF191BA659E100341183 /* Model.xcdatamodeld */; };
 		DCD5FF241BA694E600341183 /* ShowSinglePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5FF231BA694E600341183 /* ShowSinglePictureViewController.m */; };
-		DCD5FF301BA6C7D100341183 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5FF2F1BA6C7D100341183 /* Picture.m */; };
-		DCD5FF331BA6C7D200341183 /* Pictures.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5FF321BA6C7D200341183 /* Pictures.m */; };
 		DCD5FF391BA6C89000341183 /* GroupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5FF381BA6C89000341183 /* GroupsTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +51,20 @@
 		DC3424C81BB91391005C28D0 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		DC3424C91BB91391005C28D0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		DC3424CA1BB91391005C28D0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		DC3424E11BB92116005C28D0 /* ConditionInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionInit.h; sourceTree = "<group>"; };
+		DC3424E21BB92116005C28D0 /* ConditionInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionInit.m; sourceTree = "<group>"; };
+		DC3424E41BB92155005C28D0 /* Condition+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Condition+CoreDataProperties.h"; sourceTree = "<group>"; };
+		DC3424E51BB92155005C28D0 /* Condition+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Condition+CoreDataProperties.m"; sourceTree = "<group>"; };
+		DC3424E61BB92155005C28D0 /* Condition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Condition.h; sourceTree = "<group>"; };
+		DC3424E71BB92155005C28D0 /* Condition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Condition.m; sourceTree = "<group>"; };
+		DC3424EA1BB932B0005C28D0 /* Pictures+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pictures+CoreDataProperties.h"; sourceTree = "<group>"; };
+		DC3424EB1BB932B0005C28D0 /* Pictures+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Pictures+CoreDataProperties.m"; sourceTree = "<group>"; };
+		DC3424EC1BB932B0005C28D0 /* Pictures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pictures.h; sourceTree = "<group>"; };
+		DC3424ED1BB932B0005C28D0 /* Pictures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pictures.m; sourceTree = "<group>"; };
+		DC3424F01BBA2BF4005C28D0 /* Picture+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Picture+CoreDataProperties.h"; sourceTree = "<group>"; };
+		DC3424F11BBA2BF4005C28D0 /* Picture+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Picture+CoreDataProperties.m"; sourceTree = "<group>"; };
+		DC3424F21BBA2BF4005C28D0 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
+		DC3424F31BBA2BF4005C28D0 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		DCD4FC3E1BAA9BC200BD0831 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		DCD4FC3F1BAA9BC200BD0831 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		DCD4FC411BAA9CBA00BD0831 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -73,10 +92,6 @@
 		DCD5FF1A1BA659E100341183 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DCD5FF221BA694E600341183 /* ShowSinglePictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowSinglePictureViewController.h; sourceTree = "<group>"; };
 		DCD5FF231BA694E600341183 /* ShowSinglePictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowSinglePictureViewController.m; sourceTree = "<group>"; };
-		DCD5FF2E1BA6C7D100341183 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
-		DCD5FF2F1BA6C7D100341183 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
-		DCD5FF311BA6C7D200341183 /* Pictures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pictures.h; sourceTree = "<group>"; };
-		DCD5FF321BA6C7D200341183 /* Pictures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pictures.m; sourceTree = "<group>"; };
 		DCD5FF371BA6C89000341183 /* GroupsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsTableViewController.h; sourceTree = "<group>"; };
 		DCD5FF381BA6C89000341183 /* GroupsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,17 +132,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DCD4FC441BAA9CDC00BD0831 /* Controller */ = {
+		DC3424CD1BB9177B005C28D0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				DCD4FC411BAA9CBA00BD0831 /* LoginViewController.h */,
 				DCD4FC421BAA9CBA00BD0831 /* LoginViewController.m */,
 				DCD4FC3E1BAA9BC200BD0831 /* Login.h */,
 				DCD4FC3F1BAA9BC200BD0831 /* Login.m */,
-				DCD5FF371BA6C89000341183 /* GroupsTableViewController.h */,
-				DCD5FF381BA6C89000341183 /* GroupsTableViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		DC3424CE1BB9186E005C28D0 /* Condition */ = {
+			isa = PBXGroup;
+			children = (
 				DCD4FC541BAB9ED700BD0831 /* ConditionViewController.h */,
 				DCD4FC551BAB9ED700BD0831 /* ConditionViewController.m */,
+				DC3424E11BB92116005C28D0 /* ConditionInit.h */,
+				DC3424E21BB92116005C28D0 /* ConditionInit.m */,
+			);
+			name = Condition;
+			sourceTree = "<group>";
+		};
+		DCD4FC441BAA9CDC00BD0831 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DC3424CD1BB9177B005C28D0 /* Login */,
+				DCD5FF371BA6C89000341183 /* GroupsTableViewController.h */,
+				DCD5FF381BA6C89000341183 /* GroupsTableViewController.m */,
+				DC3424CE1BB9186E005C28D0 /* Condition */,
 				DCD5FEF81BA2AA4A00341183 /* ViewController.h */,
 				DCD5FEF91BA2AA4A00341183 /* ViewController.m */,
 				DCD5FF221BA694E600341183 /* ShowSinglePictureViewController.h */,
@@ -148,15 +181,23 @@
 		DCD4FC461BAA9D0600BD0831 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				DC3424F01BBA2BF4005C28D0 /* Picture+CoreDataProperties.h */,
+				DC3424F11BBA2BF4005C28D0 /* Picture+CoreDataProperties.m */,
+				DC3424F21BBA2BF4005C28D0 /* Picture.h */,
+				DC3424F31BBA2BF4005C28D0 /* Picture.m */,
+				DC3424EA1BB932B0005C28D0 /* Pictures+CoreDataProperties.h */,
+				DC3424EB1BB932B0005C28D0 /* Pictures+CoreDataProperties.m */,
+				DC3424EC1BB932B0005C28D0 /* Pictures.h */,
+				DC3424ED1BB932B0005C28D0 /* Pictures.m */,
+				DC3424E41BB92155005C28D0 /* Condition+CoreDataProperties.h */,
+				DC3424E51BB92155005C28D0 /* Condition+CoreDataProperties.m */,
+				DC3424E61BB92155005C28D0 /* Condition.h */,
+				DC3424E71BB92155005C28D0 /* Condition.m */,
 				DC3424C71BB91391005C28D0 /* User+CoreDataProperties.h */,
 				DC3424C81BB91391005C28D0 /* User+CoreDataProperties.m */,
 				DC3424C91BB91391005C28D0 /* User.h */,
 				DC3424CA1BB91391005C28D0 /* User.m */,
 				DCD5FF191BA659E100341183 /* Model.xcdatamodeld */,
-				DCD5FF311BA6C7D200341183 /* Pictures.h */,
-				DCD5FF321BA6C7D200341183 /* Pictures.m */,
-				DCD5FF2E1BA6C7D100341183 /* Picture.h */,
-				DCD5FF2F1BA6C7D100341183 /* Picture.m */,
 				DCD4FC471BAAA0D500BD0831 /* TemporaryUser.h */,
 				DCD4FC481BAAA0D500BD0831 /* TemporaryUser.m */,
 			);
@@ -360,8 +401,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCD5FF301BA6C7D100341183 /* Picture.m in Sources */,
+				DC3424E31BB92116005C28D0 /* ConditionInit.m in Sources */,
 				DCD5FEFA1BA2AA4A00341183 /* ViewController.m in Sources */,
+				DC3424F51BBA2BF4005C28D0 /* Picture.m in Sources */,
+				DC3424F41BBA2BF4005C28D0 /* Picture+CoreDataProperties.m in Sources */,
+				DC3424E81BB92155005C28D0 /* Condition+CoreDataProperties.m in Sources */,
+				DC3424EF1BB932B0005C28D0 /* Pictures.m in Sources */,
 				DCD5FEF71BA2AA4A00341183 /* AppDelegate.m in Sources */,
 				DCD4FC491BAAA0D500BD0831 /* TemporaryUser.m in Sources */,
 				DCD5FEF41BA2AA4A00341183 /* main.m in Sources */,
@@ -371,9 +416,10 @@
 				DC3424CC1BB91391005C28D0 /* User.m in Sources */,
 				DCD5FF1B1BA659E100341183 /* Model.xcdatamodeld in Sources */,
 				DCD5FF241BA694E600341183 /* ShowSinglePictureViewController.m in Sources */,
-				DCD5FF331BA6C7D200341183 /* Pictures.m in Sources */,
+				DC3424EE1BB932B0005C28D0 /* Pictures+CoreDataProperties.m in Sources */,
 				DCD4FC431BAA9CBA00BD0831 /* LoginViewController.m in Sources */,
 				DCD5FF391BA6C89000341183 /* GroupsTableViewController.m in Sources */,
+				DC3424E91BB92155005C28D0 /* Condition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
