@@ -38,6 +38,7 @@
     return _imageList;
 }
 
+// TODO: update view cell here
 #pragma mark - view life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -86,15 +87,20 @@
     }
 }
 
-
 - (IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
     ShowSinglePictureViewController *vc = segue.sourceViewController;
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) // ipad
-    {
-        [vc dismissViewControllerAnimated:YES completion:nil];
-    }
-    [self.imageList removeObjectAtIndex:[vc.index integerValue] ];
-    [self.imageCollection deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:[vc.index integerValue] inSection:0]]];
+    NSPredicate *predict = [NSPredicate predicateWithFormat:@"tag == %@",vc.index];
+    Picture *picture = [Picture MR_findFirstWithPredicate:predict];
+    [picture MR_deleteEntity];
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error){
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) // ipad
+        {
+            [vc dismissViewControllerAnimated:YES completion:nil];
+        }
+        [self.imageList removeObjectAtIndex:[vc.index integerValue] ];
+        [self.imageCollection deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:[vc.index integerValue] inSection:0]]];
+    }];
 }
 
 #pragma mark - take photo
@@ -103,12 +109,13 @@
         self.imagePickerController.delegate = (id)self;
         self.imagePickerController.editing = false;
         self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        // !!! 此处调出的Camera 全屏
         [self presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
 // TODO: 上传
 - (IBAction)upload:(id)sender {
-
+    //webservice 上传 单组图片组
 }
 
 #pragma mark - UICollectionView Data Source
@@ -149,7 +156,7 @@
     // 将图片添加到 self.imageList
     Picture *picture = [Picture MR_createEntity];
     picture.pictures = self.pictures;
-    picture.tag = [NSNumber numberWithInteger:[self.imageList count] - 1];
+    picture.tag = [NSNumber numberWithInteger:[self.imageList count]];
     picture.imageData = UIImageJPEGRepresentation(originalImage, 1);
     [self.imageList addObject:picture];
     [self.imageCollection reloadData];

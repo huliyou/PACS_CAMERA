@@ -329,7 +329,7 @@
 				TargetAttributes = {
 					DCD5FEED1BA2AA4A00341183 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = CVB2XPEMJL;
+						DevelopmentTeam = 7KD2FP8D6B;
 					};
 					DCD5FF061BA2AA4A00341183 = {
 						CreatedOnToolsVersion = 6.4;
@@ -571,7 +571,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c649899c-ab2e-4366-942e-ee2a68697707";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
@@ -590,7 +590,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c649899c-ab2e-4366-942e-ee2a68697707";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};

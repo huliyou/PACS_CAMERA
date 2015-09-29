@@ -105,6 +105,7 @@
     
     UILabel *dateLabel = (UILabel *)[cell viewWithTag:3];
     dateLabel.text = [formatter stringFromDate:date];
+    dateLabel.textColor = [UIColor lightGrayColor];
     
     UILabel *patientidLabel = (UILabel *)[cell viewWithTag:1];
     patientidLabel.text = pictures.patientid;
@@ -114,14 +115,17 @@
 //    imageView.image = [UIImage imageWithData:picture.imageData];
     imageView.image = [CombinePhotos getPhotoSliceWithPictures:pictures];
     
+    
     return cell;
 }
 
 #pragma mark - table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSSortDescriptor *dateSort = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
-    Pictures *pictures = [self.user.picturesList sortedArrayUsingDescriptors: @[dateSort]][indexPath.row];
-    [self performSegueWithIdentifier:@"SelectRow" sender:pictures];
+    if (self.editStyleIsDelete) {
+        NSSortDescriptor *dateSort = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+        Pictures *pictures = [self.user.picturesList sortedArrayUsingDescriptors: @[dateSort]][indexPath.row];
+        [self performSegueWithIdentifier:@"SelectRow" sender:pictures];
+    }
 }
 
 
