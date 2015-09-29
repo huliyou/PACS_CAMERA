@@ -17,6 +17,7 @@
 		DC3424EF1BB932B0005C28D0 /* Pictures.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424ED1BB932B0005C28D0 /* Pictures.m */; settings = {ASSET_TAGS = (); }; };
 		DC3424F41BBA2BF4005C28D0 /* Picture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424F11BBA2BF4005C28D0 /* Picture+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		DC3424F51BBA2BF4005C28D0 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424F31BBA2BF4005C28D0 /* Picture.m */; settings = {ASSET_TAGS = (); }; };
+		DC3424F91BBA3F42005C28D0 /* CombinePhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3424F81BBA3F42005C28D0 /* CombinePhotos.m */; settings = {ASSET_TAGS = (); }; };
 		DCD4FC401BAA9BC200BD0831 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD4FC3F1BAA9BC200BD0831 /* Login.m */; };
 		DCD4FC431BAA9CBA00BD0831 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD4FC421BAA9CBA00BD0831 /* LoginViewController.m */; };
 		DCD4FC491BAAA0D500BD0831 /* TemporaryUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD4FC481BAAA0D500BD0831 /* TemporaryUser.m */; };
@@ -65,6 +66,8 @@
 		DC3424F11BBA2BF4005C28D0 /* Picture+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Picture+CoreDataProperties.m"; sourceTree = "<group>"; };
 		DC3424F21BBA2BF4005C28D0 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
 		DC3424F31BBA2BF4005C28D0 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
+		DC3424F71BBA3F42005C28D0 /* CombinePhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinePhotos.h; sourceTree = "<group>"; };
+		DC3424F81BBA3F42005C28D0 /* CombinePhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinePhotos.m; sourceTree = "<group>"; };
 		DCD4FC3E1BAA9BC200BD0831 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		DCD4FC3F1BAA9BC200BD0831 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		DCD4FC411BAA9CBA00BD0831 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -154,12 +157,22 @@
 			name = Condition;
 			sourceTree = "<group>";
 		};
+		DC3424F61BBA352A005C28D0 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				DCD5FF371BA6C89000341183 /* GroupsTableViewController.h */,
+				DCD5FF381BA6C89000341183 /* GroupsTableViewController.m */,
+				DC3424F71BBA3F42005C28D0 /* CombinePhotos.h */,
+				DC3424F81BBA3F42005C28D0 /* CombinePhotos.m */,
+			);
+			name = Group;
+			sourceTree = "<group>";
+		};
 		DCD4FC441BAA9CDC00BD0831 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				DC3424CD1BB9177B005C28D0 /* Login */,
-				DCD5FF371BA6C89000341183 /* GroupsTableViewController.h */,
-				DCD5FF381BA6C89000341183 /* GroupsTableViewController.m */,
+				DC3424F61BBA352A005C28D0 /* Group */,
 				DC3424CE1BB9186E005C28D0 /* Condition */,
 				DCD5FEF81BA2AA4A00341183 /* ViewController.h */,
 				DCD5FEF91BA2AA4A00341183 /* ViewController.m */,
@@ -417,6 +430,7 @@
 				DCD5FF1B1BA659E100341183 /* Model.xcdatamodeld in Sources */,
 				DCD5FF241BA694E600341183 /* ShowSinglePictureViewController.m in Sources */,
 				DC3424EE1BB932B0005C28D0 /* Pictures+CoreDataProperties.m in Sources */,
+				DC3424F91BBA3F42005C28D0 /* CombinePhotos.m in Sources */,
 				DCD4FC431BAA9CBA00BD0831 /* LoginViewController.m in Sources */,
 				DCD5FF391BA6C89000341183 /* GroupsTableViewController.m in Sources */,
 				DC3424E91BB92155005C28D0 /* Condition.m in Sources */,

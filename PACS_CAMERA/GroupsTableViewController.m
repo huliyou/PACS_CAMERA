@@ -11,6 +11,8 @@
 #import "ViewController.h"
 #import "MagicalRecord.h"
 #import "Pictures.h"
+#import "Picture.h"
+#import "CombinePhotos.h"
 
 
 //TODO: 批量上传
@@ -94,15 +96,23 @@
     // Configure the cell...
     
     NSSortDescriptor *dateSort = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
-    NSDate *date = ([self.user.picturesList sortedArrayUsingDescriptors: @[dateSort]][indexPath.row]).date;
+    Pictures *pictures = [self.user.picturesList sortedArrayUsingDescriptors: @[dateSort]][indexPath.row];
+    
+    NSDate *date = pictures.date;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-//    cell.textLabel.text = [formatter stringFromDate:date];
+    
+    
     UILabel *dateLabel = (UILabel *)[cell viewWithTag:3];
     dateLabel.text = [formatter stringFromDate:date];
     
     UILabel *patientidLabel = (UILabel *)[cell viewWithTag:1];
-    patientidLabel.text = ([self.user.picturesList sortedArrayUsingDescriptors: @[dateSort]][indexPath.row]).patientid;
+    patientidLabel.text = pictures.patientid;
+    
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:0];
+//    Picture *picture = (Picture *)[pictures.imageDataList anyObject];
+//    imageView.image = [UIImage imageWithData:picture.imageData];
+    imageView.image = [CombinePhotos getPhotoSliceWithPictures:pictures];
     
     return cell;
 }
@@ -168,6 +178,7 @@
         vc.pictures = (Pictures *)sender;
     }
 }
+
 
 
 @end
